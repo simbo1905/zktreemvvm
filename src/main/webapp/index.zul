@@ -1,0 +1,8 @@
+<zk>
+	<window id="uploadVideo"
+			apply="org.zkoss.bind.BindComposer"
+			viewModel="@id('vm') @init('org.github.simbo1905.zktreemvvm.CommonsVfs220ViewModel')">
+		<tree model="@load(vm.model)">
+		</tree>
+	</window>
+</zk>

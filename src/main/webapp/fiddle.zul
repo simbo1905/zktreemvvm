@@ -1,0 +1,9 @@
+<zk>
+	<window id="uploadVideo"
+			apply="org.zkoss.bind.BindComposer"
+			viewModel="@id('vm') @init('org.github.simbo1905.zktreemvvm.fiddle.TestVM')">
+		<label value="Adapted from http://zkfiddle.org/sample/3dm77ch/1-MVVM-tree#source-4"/>
+		<tree model="@load(vm.model)">
+		</tree>
+	</window>
+</zk>
