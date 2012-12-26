@@ -4,9 +4,14 @@ import org.apache.commons.vfs2.FileObject;
 import org.apache.commons.vfs2.FileSystemException;
 import org.apache.commons.vfs2.FileSystemManager;
 import org.apache.commons.vfs2.VFS;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.zkoss.zul.TreeModel;
 
 public class CommonsVfs220ViewModel {
+	
+	final private static Logger log = LoggerFactory.getLogger(CommonsVfs220ViewModel.class);
+	
 	/*
 	 * could be something like "file:///tmp/" but that would be a security risk
 	 */
@@ -33,6 +38,7 @@ public class CommonsVfs220ViewModel {
 	}
 
 	public void setPickedItem(FileObject pickedItem) {
+		log.info(String.format("setPickedItem: %s", pickedItem));
 		this.pickedItem = pickedItem;
 	}
 }

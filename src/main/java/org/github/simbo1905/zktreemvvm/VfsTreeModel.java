@@ -10,6 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.zkoss.zul.AbstractTreeModel;
 
+/**
+ * TreeModel over Aapche Commons VFS FileObject nodes. 
+ */
 public class VfsTreeModel extends AbstractTreeModel<FileObject> {
 
 	final private static Logger log = LoggerFactory.getLogger(VfsTreeModel.class);

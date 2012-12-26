@@ -5,6 +5,10 @@ import java.util.Map;
 
 import org.apache.commons.vfs2.FileObject;
 
+/**
+ * Caching subclass of VfsTreeModel which naively caches calls for as long as 
+ * the object lives (e.g. until page refresh)
+ */
 public class CachingVfsTreeModel extends VfsTreeModel {
 
 	private static final long serialVersionUID = 6277408689433600782L;

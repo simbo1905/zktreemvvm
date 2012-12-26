@@ -5,6 +5,9 @@ import org.zkoss.bind.BindContext;
 import org.zkoss.bind.Converter;
 import org.zkoss.zul.Treecell;
 
+/**
+ * A class to render a friendly screen name for a FileObject
+ */
 public class NodeConverter implements Converter<String,FileObject,Treecell> {
 
 	@Override
