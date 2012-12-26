@@ -1,8 +1,19 @@
 <zk>
-	<window id="uploadVideo"
-			apply="org.zkoss.bind.BindComposer"
-			viewModel="@id('vm') @init('org.github.simbo1905.zktreemvvm.CommonsVfs220ViewModel')">
-		<tree model="@load(vm.model)">
+	<window id="uploadVideo" apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('org.github.simbo1905.zktreemvvm.CommonsVfs220ViewModel')">
+		<tree model="@load(vm.model)" selectedItem="@bind(vm.pickedItem)">
+			<treecols>
+				<treecol label="name" />
+				<treecol label="index" />
+			</treecols>
+			<template name="model" var="node" status="s">
+				<treeitem>
+					<treerow>
+						<treecell label="@bind(node) @converter('org.github.simbo1905.zktreemvvm.NodeConverter')" />
+						<treecell label="@bind(s.index)" />
+					</treerow>
+				</treeitem>
+			</template>
 		</tree>
 	</window>
 </zk>

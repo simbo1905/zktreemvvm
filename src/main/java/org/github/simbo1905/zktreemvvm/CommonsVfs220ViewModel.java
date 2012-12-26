@@ -18,7 +18,7 @@ public class CommonsVfs220ViewModel {
 			try {
 				FileSystemManager fsManager = VFS.getManager();
 				FileObject jarFileObject = fsManager.resolveFile( FILE_SYSTEM_URI );
-				_model = new VfsTreeModel(jarFileObject);
+				_model = new CachingVfsTreeModel(jarFileObject);
 			} catch (FileSystemException e) {
 				throw new IllegalArgumentException(String.format("Could not open VFS remote jar uri: %s",FILE_SYSTEM_URI),e);
 			}
@@ -26,5 +26,13 @@ public class CommonsVfs220ViewModel {
 		return _model;
 	}
 	
+	private FileObject pickedItem = null;
 
+	public FileObject getPickedItem() {
+		return pickedItem;
+	}
+
+	public void setPickedItem(FileObject pickedItem) {
+		this.pickedItem = pickedItem;
+	}
 }
