@@ -2,7 +2,7 @@
 <zk>
 	<window apply="org.zkoss.bind.BindComposer"
 		viewModel="@id('vm') @init('org.github.simbo1905.zktreemvvm.CommonsVfs220ViewModel')">
-		<tree model="@load(vm.model)" selectedItem="@bind(vm.pickedItem)">
+		<tree model="@load(vm.treeModel)" selectedItem="@bind(vm.pickedItem)">
 			<treecols>
 				<treecol label="name" />
 				<treecol label="index" />

@@ -17,18 +17,19 @@ public class CommonsVfs220ViewModel {
 	 */
 	private static final String FILE_SYSTEM_URI = "jar:http://repo1.maven.org/maven2/org/apache/commons/commons-vfs2/2.0/commons-vfs2-2.0.jar";
 	
-	TreeModel<FileObject> _model;
-	public TreeModel<FileObject> getModel() {
-		if (_model == null) {
+	TreeModel<FileObject> treeModel = null;
+	
+	public TreeModel<FileObject> getTreeModel() {
+		if (treeModel == null) {
 			try {
 				FileSystemManager fsManager = VFS.getManager();
-				FileObject jarFileObject = fsManager.resolveFile( FILE_SYSTEM_URI );
-				_model = new CachingVfsTreeModel(jarFileObject);
+				FileObject fo = fsManager.resolveFile( FILE_SYSTEM_URI );
+				treeModel = new CachingVfsTreeModel(fo);
 			} catch (FileSystemException e) {
 				throw new IllegalArgumentException(String.format("Could not open VFS remote jar uri: %s",FILE_SYSTEM_URI),e);
 			}
 			}
-		return _model;
+		return treeModel;
 	}
 	
 	private FileObject pickedItem = null;
