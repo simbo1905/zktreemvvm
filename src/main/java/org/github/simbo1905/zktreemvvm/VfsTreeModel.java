@@ -95,7 +95,7 @@ public class VfsTreeModel extends AbstractTreeModel<FileObject> {
 		for( int index = 0; index < paths.size(); index++){
 			p[index] = paths.get(p.length - 1 - index); // reverse
 		}
-		//out.println(String.format("%s getPath on %s",level(node),innerName(node)));
+		log.info(String.format("%s getPath on %s",level(node),innerName(node)));
 		return p;
 	}
 }

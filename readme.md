@@ -10,7 +10,7 @@ abstraction over a file system. This example shows the following JAR file system
 
 	jar:http://repo1.maven.org/maven2/org/apache/commons/commons-vfs2/2.0/commons-vfs2-2.0.jar
 
-but it would be trivial to change the URI used to be a file uri such as: 
+but it would be trivial to change the FILE_SYSTEM_URI used to be a file uri such as: 
 
 	file:///tmp/
 
