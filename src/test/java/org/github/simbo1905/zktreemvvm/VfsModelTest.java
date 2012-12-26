@@ -59,4 +59,5 @@ public class VfsModelTest {
 		// then
 		Assert.assertThat(child.getName().getBaseName(),is("META-INF"));
 	}
+
 }

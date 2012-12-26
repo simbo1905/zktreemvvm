@@ -3,18 +3,33 @@ package org.github.simbo1905.zktreemvvm;
 import org.apache.commons.vfs2.FileObject;
 import org.apache.commons.vfs2.FileSystemException;
 import org.apache.commons.vfs2.FileType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.zkoss.zul.AbstractTreeModel;
 
 public class VfsTreeModel extends AbstractTreeModel<FileObject> {
 
+	final private static Logger log = LoggerFactory.getLogger(VfsTreeModel.class);
+	
 	private static final long serialVersionUID = -8137575824288195035L;
 
 	public VfsTreeModel(FileObject root){
 		super(root);
 	}
 	
+	String innerName(FileObject jarFile){
+		String name = jarFile.toString();
+		return name.substring(name.indexOf('!'));
+	}
+	
+	int level(FileObject jarFile){
+		String name = innerName(jarFile);
+		return name.replaceAll("[^/]", "").length();
+	}
+	
 	@Override
 	public FileObject getChild(FileObject parent, int index) {
+		log.info(String.format("%s getChild on %s with index %s", level(parent), innerName(parent), index));
 		FileObject child = null;
 		try {
 			FileObject[] children = parent.getChildren();
@@ -36,6 +51,7 @@ public class VfsTreeModel extends AbstractTreeModel<FileObject> {
 		} catch (FileSystemException e) {
 			throw new IllegalArgumentException(e);
 		}
+		log.info(String.format("%s getChildCount on %s returning %s",level(node),innerName(node), childCount));
 		return childCount;
 	}
 
@@ -48,6 +64,7 @@ public class VfsTreeModel extends AbstractTreeModel<FileObject> {
 		} catch (FileSystemException e) {
 			throw new IllegalArgumentException(e);
 		}
+		log.info(String.format("%s isLeaf on %s returning %s", level(node),innerName(node), isLeaf));
 		return isLeaf;
 	}
 
