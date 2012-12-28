@@ -16,3 +16,5 @@ but it would be trivial to change the FILE_SYSTEM_URI used to be a file uri such
 
 See the [commons vfs filesystems](http://commons.apache.org/vfs/filesystems.html) documentation 
 for more information. 
+
+Now with a 1 minute google guava cache inspired by [Marcin Grzejszczak's dzone article](http://java.dzone.com/articles/google-guava-cache-regular).
