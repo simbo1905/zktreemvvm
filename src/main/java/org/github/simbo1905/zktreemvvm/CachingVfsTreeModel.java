@@ -10,8 +10,12 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
 /**
- * Caching subclass of VfsTreeModel which naively caches calls for as long as 
- * the object lives (e.g. until page refresh)
+ * Caching subclass of VfsTreeModel which naively caches calls for a minute. 
+ * Note refreshing the page gets a new object so new caches. 
+ * Note the caching strategy here is only a proof-of-concept. The timeout is 
+ * on multiple related caches is unwise; it can lead to inconsistencies as  
+ * separate caches refreshed at different times may not be an accurate or 
+ * consistent snapshot of the underlying data. 
  */
 public class CachingVfsTreeModel extends VfsTreeModel {
 
