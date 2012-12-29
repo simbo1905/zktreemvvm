@@ -6,7 +6,8 @@ Build and run the code with
 	mvn -Djetty.port=8080 package jetty:run
 
 The code uses Apache Commons VFS (Virtual File System) which is an interface 
-abstraction over a file system. This example shows the following JAR file system
+abstraction over a file system. This example shows the inside of the the JAR 
+file system at this uri:  
 
 	jar:http://repo1.maven.org/maven2/org/apache/commons/commons-vfs2/2.0/commons-vfs2-2.0.jar
 
