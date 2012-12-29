@@ -6,20 +6,6 @@
 
 	<display-name>zktreemvvm</display-name>
 	
-<!-- 	<context-param>
-		<param-name>contextClass</param-name>
-		<param-value>
-         org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-      </param-value>
-	</context-param>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>org.github.simbo1905.zkmongogmaps.app.CityConfig,org.github.simbo1905.zkmongogmaps.data.CityLoaderConfig</param-value>
-	</context-param>
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener> -->
-	
 	<listener>
 		<description>
   	Used to cleanup when a session is destroyed</description>
