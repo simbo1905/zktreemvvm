@@ -6,7 +6,7 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>zktreemvvm Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/simbo1905/zktreemvvm</url>
 
 	<properties>
 		<zk.version>6.5.1</zk.version>
